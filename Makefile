@@ -1,12 +1,13 @@
 # Name: Sally Chung
 # Project: Lab 2: 
 
-EXECUTABLES=time-4-baby-and-me
-SRC=time-4-baby-and-me.c
-OBJ=time-4-baby-and-me.o
+EXECUTABLES=lab2
+SRC=lab2.c
+OBJ=lab2.o
 
 CC=gcc
 CFLAGS=-g
+
 all: $(EXECUTABLES)
 
 $(EXECUTABLES): $(SRC)
