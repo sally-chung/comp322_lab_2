@@ -1,4 +1,3 @@
-
 #include <sys/wait.h>
 #include <fcntl.h>
 #include <unistd.h>
@@ -71,7 +70,7 @@ int main(int argc, char* argv[]) {
 
         execve(outputArgv[0], outputArgv, env_arg);
 
-        perror("execve failed");
+        perror("Execve failed");
         free(tempString);
         free(env_arg[0]);
         free(outputArgv[0]);
