@@ -38,9 +38,9 @@ int main(int argc, char* argv[]) {
             /* 3) The parent process prints the PID of both children on stderr 
             (fprintf) */
             waitpid(child1PID, &status, 0);
-            fprintf(stderr, "%s: c1 $? = %d\n", argv[1], WEXITSTATUS(status));
+            fprintf(stderr, "%s: $? = %d\n", argv[1], WEXITSTATUS(status));
             waitpid(child2PID, &status, 0); 
-            fprintf(stderr, "%s: c2 $? = %d\n", argv[3], WEXITSTATUS(status));
+            fprintf(stderr, "%s: $? = %d\n", argv[3], WEXITSTATUS(status));
             /* 4) The parent process closes access to the pipe and the child processes 
              wires the pipe to allow for inter-process communication 
             (dup(2)) 
@@ -49,9 +49,6 @@ int main(int argc, char* argv[]) {
             close(pipefd[1]);
         }
     }
-
-
-
 
     /* 5) The first process executes the first command,
        and the second process executes the second command

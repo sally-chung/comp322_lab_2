@@ -12,4 +12,7 @@
 - continued working on launch, put everything in execve and it broke
 03/12
 - started working on tube, setting up fork for two child processes
-- worked on  
+03/14
+- setting up two execve
+- having trouble understanding that dup(2) does
+- project is not of complete completion, having trouble working out some aspects

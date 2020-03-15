@@ -28,7 +28,7 @@ int main(int argc, char* argv[]) {
     /* 3) the child process executes the supplied command (execve)
         - the child needs to prepare the new argv structure */
     if (childPID == 0){
-            
+
         char* env_arg[30];
         char* outputArgv[30];
         char* c = "/";
@@ -37,13 +37,13 @@ int main(int argc, char* argv[]) {
         char* token = strtok(argv[1], "/");
         char* oldToken;
         char* tempString = (char*)malloc(100*sizeof(char));
-        
+            
         strcpy(tempString, "PATH=");
-        
+            
         while(token != NULL){
             oldToken = token;
             token = strtok(NULL, "/");
-            if(token!=NULL) {
+            if(token != NULL) {
                 strcat(tempString, c);
                 strcat(tempString, oldToken);
             }
@@ -53,17 +53,13 @@ int main(int argc, char* argv[]) {
             }
         };
 
-    // given argv[1] /bin/bin/ls, populate env_arg PATH=/foldername/foldername/ls and following args
+        // given argv[1] /bin/bin/ls, populate env_arg PATH=/foldername/foldername/ls and following args
 
         for(int i = 2; i < argc; i++) {
             outputArgv[i-1] = argv[i];
         }
         outputArgv[argc-1] = NULL;
-
-/*        for(int i = 0; i < argc-1; i++) {
-            printf("outputArgv[%d]: %s\n", i, outputArgv[i]);
-        } */
-        
+            
         env_arg[0] = (char*)malloc(100*sizeof(char));
         strcpy(env_arg[0], tempString);
         env_arg[1] = NULL;
