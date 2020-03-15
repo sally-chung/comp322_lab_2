@@ -13,6 +13,6 @@
 03/12
 - started working on tube, setting up fork for two child processes
 03/14
-- setting up two execve
+- editing README and tube file
 - having trouble understanding that dup(2) does
 - project is not of complete completion, having trouble working out some aspects
